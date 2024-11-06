@@ -17,35 +17,10 @@ ____
 - psycopg2-binary 2.9.3
 - django-prometheus 2.2.0
 
-<h3>Deployment</h3>
+<h3>Инструкция по запуску</h3>
 
 ____
-
-
-
-- install Python 3.8
-- install libs 
-```shell
-      pip3 install -r requirements.txt
-```
-
-* Set environment export for variables:
-```yaml
-      DJANGO_DB_HOST: db
-      DJANGO_DB_NAME: app
-      DJANGO_DB_USER: worker
-      DJANGO_DB_PASS: worker
-      DJANGO_DB_PORT: "5432"
-      DJANGO_DEBUG: "False"
-```
-
-
-* migrate database:
-```shell
-python3 manage.py migrate
-```
-
-* start application:
-```shell
-python3 manage.py runserver 0.0.0.0:8000
-```
+- Устанавливаем Docker (Linux: https://timeweb.cloud/tutorials/docker/kak-ustanovit-docker-na-ubuntu-22-04, Windows: https://docs.docker.com/desktop/install/windows-install/)
+- Открываем командную строку в директории проекта
+- Запускаем команду docker-compose up
+- Открываем приложение в браузере по адресу http://localhost:8000/
