@@ -30,7 +30,7 @@ services:
   depends_on:
    - postgres
 # Для того, чтобы запустить приложение без wsgi, необходимо закомментировать 33 строку и раскомментировать 34
-  command: bash -c "python3 /app/manage.py migrate && uwsgi --ini /app/uwsgi.ini"
+  command: bash -c "python3 /app/manage.py migrate && uwsgi --ini /app/uwsgi.ini --http-socket ${WEB_HOST_ADDRESS}"
 #  command: bash -c "python3 /app/manage.py migrate && python3 /app/manage.py runserver ${WEB_HOST_ADDRESS}"
   ports:
    - "8000:8000"
