@@ -22,8 +22,6 @@ ____
 
 ____
 
-
-
 - install Python 3.8
 - install Docker - https://docs.docker.com/engine/install/ (Инструкция установки для всех ОС)
 - Install Docker-compose - https://docs.docker.com/compose/install/linux/ (Инструкция установки для Linux, т.к. для MAC и Windows устанавливается Docker Desktop, который включает в себя плагин docker-compose)
@@ -33,3 +31,4 @@ ____
 ```shell
       docker-compose up -d
 ```
+* Перейти по адресу который был указан в переменной - WEB_HOST_ADDRESS

@@ -9,7 +9,7 @@ services:
     POSTGRES_USER: ${DB_USER}
     POSTGRES_DB: ${DB_NAME}
   volumes:
-   - ${POSTGRES_BACKUP_PATH}:${POSTGRES_CONTAINER_PATH}
+   - ${POSTGRES_BACKUP_PATH}:/var/lib/postgresql/data
   ports:
    - 5432:5432
  django:
@@ -23,7 +23,7 @@ services:
    DJANGO_DB_PORT: "5432"
    DJANGO_DEBUG: "False"
   volumes:
-    - ${DJANGO_MEDIA_UPLOADS_BACKUP_PATH}:${DJANGO_MEDIA_UPLOADS_CONTAINER_PATH}
+    - ${DJANGO_MEDIA_UPLOADS_BACKUP_PATH}:/app/media/uploads
   build:
    context: .
    dockerfile: docker-file-service.conf
