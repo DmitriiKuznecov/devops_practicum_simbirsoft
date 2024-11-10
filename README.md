@@ -16,36 +16,19 @@ ____
 - Pillow 9.0.0
 - psycopg2-binary 2.9.3
 - django-prometheus 2.2.0
+- uwsgi 2.0.19.1
 
 <h3>Deployment</h3>
 
 ____
 
-
-
 - install Python 3.8
-- install libs 
+- install Docker - https://docs.docker.com/engine/install/ (Инструкция установки для всех ОС)
+- Install Docker-compose - https://docs.docker.com/compose/install/linux/ (Инструкция установки для Linux, т.к. для MAC и Windows устанавливается Docker Desktop, который включает в себя плагин docker-compose)
+- Create .env file. Необходимо создать файл с переменными окружения, по аналогии с файлом .env.example в корне проекта. У каждой переменной после равно в угловых скобках написано описание переменной, необходимо заменить их на значения, оставив после равно только значение перменной. Угловые скобки необходимо удалить тоже.
+
+* Start application:
 ```shell
-      pip3 install -r requirements.txt
+      docker-compose up -d
 ```
-
-* Set environment export for variables:
-```yaml
-      DJANGO_DB_HOST: db
-      DJANGO_DB_NAME: app
-      DJANGO_DB_USER: worker
-      DJANGO_DB_PASS: worker
-      DJANGO_DB_PORT: "5432"
-      DJANGO_DEBUG: "False"
-```
-
-
-* migrate database:
-```shell
-python3 manage.py migrate
-```
-
-* start application:
-```shell
-python3 manage.py runserver 0.0.0.0:8000
-```
+* Перейти по адресу который был указан в переменной - WEB_HOST_ADDRESS
